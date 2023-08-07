@@ -1,7 +1,13 @@
 1. Клонировать проект
 
 ```bash
-git clone
+git clone https://github.com/arinazaikina/skypro_course_8_docker.git
+```
+
+2. Перейти в корневую папку проекта
+
+```bash
+cd skypro_course_8_docker/django_project
 ```
 
 # Задание 2
@@ -114,10 +120,13 @@ exit
 Развернуть в Docker Redis для работы с очередями и подключите его к текущему проекту.
 
 1. Остановила локальный redis
+
 ```bash
 sudo systemctl stop redis
 ```
+
 2. Запустить контейнер с redis
+
 ```bash
 docker run --name redis -d -p 6379:6379 redis
 ```
