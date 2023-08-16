@@ -1,20 +1,4 @@
-1. Клонировать проект
-
-```bash
-git clone https://github.com/arinazaikina/skypro_course_8_docker.git
-```
-
-2. Перейти в корневую папку проекта
-
-```bash
-cd skypro_course_8_docker/django_project
-```
-
 # Задание 2
-
-Создать контейнер с подходящей версией Python.
-Запустить django-проект в контейнере.
-Открыть стартовую страницу проекта на хостовой машине.
 
 1. В корневой папке проекта есть Dockerfile, который содержит
    инструкции для создания образа.
@@ -48,28 +32,7 @@ docker run --name django-app -p 8000:8000 django_app
 
 1. Создать локальную папку для хранения данных БД.
 
-```bash
-mkdir ~/Documents/python_developer/skypro/postgres-data
-```
-
 2. Убедиться, что порт 5432 свободен.
-   С помощью команды можно проверить какие есть процессы на порту 5432:
-
-```bash
-netstat -tuln | grep 5432
-```
-
-На моей хостовой машине порт был занят локально установленной версией PostgreSQL
-
-```
-tcp        0      0 127.0.0.1:5432          0.0.0.0:*               LISTEN
-```
-
-Остановка локальной версии PostgreSQL
-
-```bash
-sudo service postgresql stop
-```
 
 3. Запуск контейнера с PostgreSQL с помощью официального образа.
 
@@ -114,23 +77,5 @@ create database django_project;
 ```bash
 exit
 ```
-
-# *Дополнительное задание
-
-Развернуть в Docker Redis для работы с очередями и подключите его к текущему проекту.
-
-1. Остановила локальный redis
-
-```bash
-sudo systemctl stop redis
-```
-
-2. Запустить контейнер с redis
-
-```bash
-docker run --name redis -d -p 6379:6379 redis
-```
-
-Запущенные контейнеры
 
 ![img.png](img.png)
