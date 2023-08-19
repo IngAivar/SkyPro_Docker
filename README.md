@@ -77,5 +77,3 @@ create database django_project;
 ```bash
 exit
 ```
-
-![img.png](img.png)
